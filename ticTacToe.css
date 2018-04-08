@@ -3,19 +3,36 @@ body {
 }
 
 table {
-	margin: 40px auto;
+	margin: 35px auto;
 	
 }
+.pre-animation {
+    opacity: 0;
+    }
+.test {
+    transition: 0.75s;
+    opacity: 0.5;
+}
+
+.opaque {
+	transition: 0.75s;
+	opacity: 1;
+}
+.icons{
+	height: 90%;
+	width: 100%;
+	margin: none;
+	font: bold 75px Lato;
+	color: #138D75;
+	text-align: center;
+}
 td {
-border: solid 1px #138D75;
-border-radius: 5px;
-height: 100px;
-width: 100px;
-padding: 2px;
-font: bold 75px Lato;
-color: #138D75;
-text-align: center;
-cursor: pointer;
+	border: solid 1px #138D75;
+	border-radius: 5px;
+	height: 100px;
+	width: 100px;
+	padding: 2px;
+	cursor: pointer;
 }
 
 #title {
@@ -33,6 +50,5 @@ button{
 	background-color: #138D75;
 	font: bold 30px Lato;
 	color: #76D7C4;
-	text-align: center;
-	cursor: pointer;
+	cursor: pointer;	
 }
