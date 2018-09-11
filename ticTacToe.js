@@ -3,21 +3,25 @@ console.log("CONNECTED");
 
 var buttons = document.querySelectorAll(".icons");
 var lock = document.getElementById("lock");
+var reset = document.getElementById("reset");
 var attach = new Array();
 var alternate; 
 //only runs once at the beginning when code loads
+start();
+function start() {
 for (var i = 0, length = buttons.length; i < length; i++)
 	{ 
-		//console.log("forloop");
+		
 		//adds play function to each table cell, as well as parameter
 		//that function is attached
 		buttons[i].index = i;
 		console.log(buttons[i].index);
-		
+
 		attach[i] = true;
 		buttons[i].addEventListener("click", play);
 		buttons[i].classList.add("pre-animation");
 	}
+}
 
 function play(){
 	//for loop to ensure player only enters one icon (x or o)on the board
@@ -30,7 +34,7 @@ function play(){
 		if ((buttons[i].innerHTML != "" && attach[i]) && this.innerHTML == ""){		
 			buttons[i].classList.add("pre-animation");
 			buttons[i].innerHTML = "";
-			buttons[i].classList.remove("test");
+			buttons[i].classList.remove("transparent");
 			//this.classList.add("pre-animation");
 			//this.classList.remove("test");			
 		}
@@ -41,7 +45,7 @@ function play(){
 		if (this.innerHTML == ""){
 			this.innerHTML = "X";
 			this.classList.remove("pre-animation");
-			this.classList.add("test");
+			this.classList.add("transparent");
 				
 		}			
 	}
@@ -49,7 +53,7 @@ function play(){
 		if (this.innerHTML == ""){
 			this.innerHTML = "O";	
 			this.classList.remove("pre-animation");
-			this.classList.add("test");
+			this.classList.add("transparent");
 		}
 	}
 }
@@ -65,9 +69,24 @@ lock.addEventListener("click", function(){
 				buttons[i].removeEventListener("click", play);
 				}
 		}
-	//do something to fill in empty spot 
+	 
 });
 
 
-
 //reset global variables to start game again
+reset.addEventListener("click", function(){
+	attach.length = 0; 
+	console.log("clicked");
+	
+	for (var i = 0, length = buttons.length; i < length; i++){ 
+		buttons[i].innerHTML = ""
+		buttons[i].index = i;
+		console.log(buttons[i].index);
+		attach[i] = true;
+		buttons[i].addEventListener("click", play);
+		buttons[i].classList.add("pre-animation");
+		buttons[i].classList.remove("transparent");
+		buttons[i].classList.remove("opaque");
+	}
+	
+});

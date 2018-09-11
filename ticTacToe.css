@@ -3,13 +3,12 @@ body {
 }
 
 table {
-	margin: 35px auto;
-	
+	margin: 25px auto;
 }
 .pre-animation {
     opacity: 0;
     }
-.test {
+.transparent {
     transition: 0.75s;
     opacity: 0.5;
 }
@@ -27,18 +26,21 @@ table {
 	text-align: center;
 }
 td {
-	border: solid 1px #138D75;
-	border-radius: 5px;
+
 	height: 100px;
 	width: 100px;
 	padding: 2px;
+	border: solid 1px #138D75;
+	border-radius: 5px;
 	cursor: pointer;
 }
 
 #title {
-	font: bold 100px Lato;
+
+	font: bold 80px Lato;
 	color: #138D75;
 	text-align: center;
+	margin-bottom: 10px;
 }
 
 button{
@@ -48,7 +50,12 @@ button{
 	border: solid 1px #138D75;
 	border-radius: 5px;
 	background-color: #138D75;
-	font: bold 30px Lato;
 	color: #76D7C4;
+	font: bold 25px Lato;
 	cursor: pointer;	
 }
+
+button:hover {
+	background-color: #0d6856;
+}
+
